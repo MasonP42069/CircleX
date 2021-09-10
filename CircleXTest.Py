@@ -9,8 +9,6 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
 SCREEN_TITLE = "CircleX"
 
-AMBIENT_COLOR = (255, 153, 240)
-
 class CircleSprite(arcade.Sprite):
     def __init__(self, filename, pymunk_shape):
         super().__init__(filename, center_x=pymunk_shape.body.position.x, center_y=pymunk_shape.body.position.y)
@@ -27,7 +25,7 @@ class MyGame(arcade.Window):
 
         self.peg_list = arcade.SpriteList()
         self.ball_list: arcade.SpriteList[CircleSprite] = arcade.SpriteList()
-        arcade.set_background_color(arcade.color.AMBIENT_COLOR)
+        arcade.set_background_color([255, 153, 240])
 
         self.draw_time = 0
         self.processing_time = 0
